@@ -32,6 +32,7 @@ class RecentsTableTableViewController: UITableViewController, UISearchResultsUpd
     }
 
     let searchController = UISearchController(searchResultsController: nil)
+    let segmentedControl = UISegmentedControl(items: ["All", "Missed"])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class RecentsTableTableViewController: UITableViewController, UISearchResultsUpd
         title = "Recents"
         
         // Enable large titles for the navigation controller
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
 
@@ -48,6 +51,15 @@ class RecentsTableTableViewController: UITableViewController, UISearchResultsUpd
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .systemBlue
         
+        // Set up segmented control in the navigation bar
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        segmentedControl.backgroundColor = .black
+        segmentedControl.selectedSegmentTintColor = .systemBlue
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        navigationItem.titleView = segmentedControl
+        
         // Set up the search controller
         setupSearchController()
 
@@ -55,16 +67,25 @@ class RecentsTableTableViewController: UITableViewController, UISearchResultsUpd
         tableView.register(RecentsTableViewCell.self, forCellReuseIdentifier: "recents cell")
         tableView.backgroundColor = .black
         tableView.alwaysBounceVertical = true
+        
     }
 
     func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.barStyle = .black // Sets the general appearance of the search bar
+        searchController.searchBar.searchBarStyle = .minimal // Makes the background transparent for customization
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false // Keep search bar visible when scrolling
+        //navigationItem.hidesSearchBarWhenScrolling = false // Keep search bar visible when scrolling
         definesPresentationContext = true
     }
+    
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+            // Update the list based on the selected segment
+            // For simplicity, you can add a condition to filter "missed" calls differently if applicable
+            tableView.reloadData()
+        }
 
 
     

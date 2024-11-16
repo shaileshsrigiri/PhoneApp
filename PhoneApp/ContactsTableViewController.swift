@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController, UISearchResultsUpdating {
+class ContactsTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     let contacts = [
         "","A","Aaron Smith", "Abigail Johnson", "Adam Brown", "Alan White", "Alexandra Green", "Alice King", "Amanda Harris", "Andrew Walker", "Angela Scott", "Anna Parker",
@@ -28,14 +28,14 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         "Scott Ward", "Sean Cooper", "Sophia Brown", "Stephanie Hughes", "Steven Gray", "Susan Adams", "Sydney Perry","","T", "Taylor Johnson", "Taylor Wilson", "Thomas White", "Timothy Campbell",
         "Tyler Parker","","V", "Vanessa Young", "Victoria Lopez", "Vincent Bennett","","W", "William Johnson", "William Powell","","Z", "Zachary Ross"
     ]
-
+    
     var filteredContacts = [String]()
     var isFiltering: Bool {
         return searchController.isActive && !searchController.searchBar.text!.isEmpty
     }
-
+    
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,43 +47,45 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .systemBlue
-       
+        
         // Set up the search controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.delegate = self
+        searchController.searchBar.barStyle = .black // Sets the general appearance of the search bar
+        searchController.searchBar.searchBarStyle = .minimal // Makes the background transparent for customization
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
+        
         // Register a basic UITableViewCell
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contacts cell")
         tableView.backgroundColor = .black
-//        //tableView.alwaysBounceVertical = true // Ensure the table view is scrollable
-       
+        
+        
+        // Add a button to the navigation bar
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addContact))
-                navigationItem.rightBarButtonItem = addButton
-                definesPresentationContext = true
+        navigationItem.rightBarButtonItem = addButton
     }
     
     @objc private func addContact() {
-            let alert = UIAlertController(title: "Add Contact", message: "This is where the add contact functionality will be implemented.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-
+        let alert = UIAlertController(title: "Add Contact", message: "This is where the add contact functionality will be implemented.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isFiltering ? filteredContacts.count : contacts.count
-        //return contacts.count
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contacts cell", for: indexPath)
         let contact = isFiltering ? filteredContacts[indexPath.row] : contacts[indexPath.row]
@@ -95,9 +97,9 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         cell.selectionStyle = .none
         return cell
     }
-
+    
     // MARK: - Search results updating
-
+    
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text!
         filteredContacts = contacts.filter { contact in
