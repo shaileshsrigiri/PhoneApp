@@ -79,6 +79,11 @@ class RecentsTableTableViewController: UITableViewController, UISearchResultsUpd
         navigationItem.searchController = searchController
         //navigationItem.hidesSearchBarWhenScrolling = false // Keep search bar visible when scrolling
         definesPresentationContext = true
+        
+        // Set up the tab bar appearance
+        if let tabBar = tabBarController?.tabBar {
+            tabBar.barTintColor = .black
+        }
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {

@@ -68,6 +68,11 @@ class ContactsTableViewController: UITableViewController, UISearchResultsUpdatin
         // Add a button to the navigation bar
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addContact))
         navigationItem.rightBarButtonItem = addButton
+        
+        // Set up the tab bar appearance
+        if let tabBar = tabBarController?.tabBar {
+            tabBar.barTintColor = .black
+                }
     }
     
     @objc private func addContact() {

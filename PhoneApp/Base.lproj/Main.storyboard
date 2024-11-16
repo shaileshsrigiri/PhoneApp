@@ -180,7 +180,9 @@
         <scene sceneID="WcU-uT-uG3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zfp-FL-ovK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="jUu-zW-B7x"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="jUu-zW-B7x">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rOt-xu-eZS">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>

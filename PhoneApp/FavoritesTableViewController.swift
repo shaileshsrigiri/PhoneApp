@@ -43,6 +43,11 @@ class FavoritesTableViewController: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addContact))
                 navigationItem.rightBarButtonItem = addButton
                 definesPresentationContext = true
+        
+        // Set up the tab bar appearance
+        if let tabBar = tabBarController?.tabBar {
+            tabBar.barTintColor = .black
+                }
     }
     
     @objc private func addContact() {
