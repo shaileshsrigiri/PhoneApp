@@ -16,14 +16,14 @@ class FavoritesTableViewController: UITableViewController {
             ("Mayya", "WhatsApp", "M"),
             ("Appa", "WhatsApp", "A"),
             ("Venky", "WhatsApp", "V"),
-            ("Sneha", "mobile", "S"),
+            ("Thomas", "mobile", "TH"),
             ("Caleb Wilson", "mobile", "CW"),
             ("Elijah Coleman", "mobile", "EC"),
             ("Brittany Mitchell", "mobile", "BM"),
             ("Mayya", "WhatsApp", "M"),
             ("Appa", "WhatsApp", "A"),
             ("Venky", "WhatsApp", "V"),
-            ("Sneha", "mobile", "S")
+            ("Thomas", "mobile", "TH")
         ]
 
     override func viewDidLoad() {
