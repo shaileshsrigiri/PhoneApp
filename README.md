@@ -32,6 +32,7 @@ Select the target device or simulator.
 
 Click the 'Run' button or press Cmd+R.
 
+## Usage
 Upon launching the application, users can interact with the provided interface to explore the app's features. This template can be customized and expanded to suit specific project requirements.
 
 
