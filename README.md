@@ -20,20 +20,18 @@ PhoneApp is an iOS application developed using Swift. This project serves as a f
    git clone https://github.com/shaileshsrigiri/PhoneApp.git
 
 2. **Navigate to the Project Directory:**
-   '''bash
+   ```bash
    cd PhoneApp
 
 
 3. **Open the Project in Xcode:**
-   '''bash
+   ```bash
    open PhoneApp.xcodeproj
 
 
-Build and Run the Project:
-
-Select the target device or simulator.
-
-Click the 'Run' button or press Cmd+R.
+4.**Build and Run the Project:**
+-**Select the target device or simulator.**
+-**Click the 'Run' button or press Cmd+R.**
 
 ## Usage
 Upon launching the application, users can interact with the provided interface to explore the app's features. This template can be customized and expanded to suit specific project requirements.
@@ -42,7 +40,7 @@ Upon launching the application, users can interact with the provided interface t
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
+## Contact
 For any inquiries or issues, please contact shaileshsrigiri.
 
 
