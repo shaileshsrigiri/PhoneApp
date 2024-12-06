@@ -32,8 +32,11 @@ PhoneApp is an iOS application developed using Swift. This project serves as a f
 -**Select the target device or simulator.**
 -**Click the 'Run' button or press Cmd+R.**
 
+
 ## Usage
+
 Upon launching the application, users can interact with the provided interface to explore the app's features. This template can be customized and expanded to suit specific project requirements.
+
 
 ## Contributing
 
@@ -55,6 +58,7 @@ Contributions are welcome! Please follow these steps:
    
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 ## Contact
 For any inquiries or issues, please contact 
