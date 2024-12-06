@@ -29,14 +29,31 @@ PhoneApp is an iOS application developed using Swift. This project serves as a f
    open PhoneApp.xcodeproj
 
 
-4.**Build and Run the Project:**
+4. **Build and Run the Project:**
+
 -**Select the target device or simulator.**
 -**Click the 'Run' button or press Cmd+R.**
 
 ## Usage
 Upon launching the application, users can interact with the provided interface to explore the app's features. This template can be customized and expanded to suit specific project requirements.
 
+## Contributing
 
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the Repository**: Click the 'Fork' button at the top right corner of this page.
+2. **Create a New Branch**:
+   ```bash
+   git checkout -b feature/YourFeatureName
+3. **Commit Your Changes:**
+   ```bash
+   git commit -m 'Add some feature'
+4. **Push to the Branch:**
+   ```bash
+   git push origin feature/YourFeatureName
+5. **Create a Pull Request:** Navigate to the original repository and click 'New Pull Request'.
+
+   
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
