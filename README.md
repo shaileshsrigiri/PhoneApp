@@ -1,3 +1,27 @@
+# PhoneApp
+
+PhoneApp is an iOS application developed using Swift. This project serves as a foundational template for building iOS applications, providing essential components and structure to kickstart development.
+
+## Features
+
+- **Swift Language**: Utilizes Swift for modern and efficient code.
+- **Xcode Project**: Structured as an Xcode project for seamless development.
+
+## Requirements
+
+- **iOS Version**: iOS 13.0 or later
+- **Xcode Version**: Xcode 11.0 or later
+- **Swift Version**: Swift 5.0 or later
+
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/shaileshsrigiri/PhoneApp.git
+
+
+
+
 ## PhoneApp
 PhoneApp is an iOS application developed using Swift. This project serves as a foundational template for building iOS applications, providing essential components and structure to kickstart development.
 
